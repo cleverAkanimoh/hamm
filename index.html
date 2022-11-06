@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>hamm tutorial</title>
+		<style type="text/css">
+			/* @keyframes slideOut {
+				to {
+					transform: translateX(-50%);
+					opacity: 0;
+				}
+			}
+
+			@keyframes moveDown {
+				to {
+					transform: rotate(45deg);
+					margin-bottom: -30px;
+				}
+			}
+
+			@keyframes moveUp {
+				to {
+					transform: rotate(-45deg);
+					margin-top: -20px;
+				}
+			} */
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: 0;
+			}
+
+			main {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(rgb(70, 70, 175), rgb(180, 33, 33));
+				height: 100vh;
+			}
+
+			.hammContainer {
+				background: transparent;
+				display: flex;
+				place-items: center;
+				flex-direction: column;
+				padding: 1rem;
+				border-radius: 0.7rem;
+				cursor: pointer;
+			}
+
+			.hamm {
+				background: white;
+				width: 100px;
+				height: 20px;
+				border-radius: 0.7rem 1rem;
+				transition: all 0.2s;
+			}
+
+			.hamm:not(:last-child) {
+				margin-bottom: 9px;
+			}
+
+			/* .animate .first {
+			animation: moveDown 0.2s 0.5s forwards;
+		}
+		.animate .second {
+			animation: slideOut 0.5s forwards;
+		}
+		.animate .third {
+			animation: moveUp 0.2s 0.5s forwards;
+		} */
+
+		.animate .first {
+			transform: rotate(45deg);
+			margin-bottom: -30px;
+		}
+		.animate .second {
+			transform: translateX(-50%);
+			opacity: 0;
+		}
+		.animate .third {
+			transform: rotate(-45deg);
+			margin-top: -20px;
+		}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="hammContainer">
+				<div class="hamm first"></div>
+				<div class="hamm second"></div>
+				<div class="hamm third"></div>
+			</div>
+		</main>
+
+		<script>
+			let container = document.querySelector(".hammContainer");
+
+			container.onclick = () => {
+				container.classList.toggle("animate");
+				console.log("animated");
+			};
+		</script>
+	</body>
+</html>
